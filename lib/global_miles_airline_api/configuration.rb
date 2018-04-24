@@ -11,7 +11,8 @@ module GlobalMilesAirlineApi
 
     # An enum for SDK environments.
     class Environment
-      ENVIRONMENT = [TEST = 0].freeze
+      #CLOUD: Cloud Environment
+      ENVIRONMENT = [CLOUD = 0].freeze
     end
 
     # An enum for API servers.
@@ -20,11 +21,11 @@ module GlobalMilesAirlineApi
     end
 
     # The environment in which the SDK is running.
-    @environment = Environment::TEST
+    @environment = Environment::CLOUD
 
     # All the environments the SDK can run in.
     @environments = {
-      Environment::TEST => {
+      Environment::CLOUD => {
         Server::DEFAULT => 'https://test1.api.globalmiles.com'
       }
     }

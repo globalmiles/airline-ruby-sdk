@@ -2,9 +2,9 @@
 # ( https://apimatic.io ).
 
 module GlobalMilesAirlineApi
-  # FlightsController
-  class FlightsController < BaseController
-    @instance = FlightsController.new
+  # MembersController
+  class MembersController < BaseController
+    @instance = MembersController.new
 
     class << self
       attr_accessor :instance
@@ -14,14 +14,14 @@ module GlobalMilesAirlineApi
       self.class.instance
     end
 
-    # This endpoint allows to search the status of flight.
-    # @param [FlightStatusRequest] body Required parameter: The body of the
+    # This endpoint allows to recommend a new member to airlines.
+    # @param [NewMemberRequest] body Required parameter: The body of the
     # request.
-    # @return FlightStatusResponse response from the API call
-    def create_flight_status(body)
+    # @return NewMemberResponse response from the API call
+    def create_recommend_a_new_member(body)
       # Prepare query url.
       _query_builder = Configuration.get_base_uri
-      _query_builder << '/v1/airline/flights/actions/status'
+      _query_builder << '/v1/airline/members/'
       _query_url = APIHelper.clean_url _query_builder
 
       # Prepare headers.
@@ -41,18 +41,17 @@ module GlobalMilesAirlineApi
 
       # Return appropriate response type.
       decoded = APIHelper.json_deserialize(_context.response.raw_body)
-      FlightStatusResponse.from_hash(decoded)
+      NewMemberResponse.from_hash(decoded)
     end
 
-    # This endpoint allows to create a flight on the system and defines the
-    # mileage rules for the passenger.
-    # @param [FlightCreateRequest] body Required parameter: The body of the
+    # This endpoint allows to search a member on the airline system.
+    # @param [MemberSearchRequest] body Required parameter: The body of the
     # request.
-    # @return Response response from the API call
-    def create_flight_creation(body)
+    # @return MemberSearchResponse response from the API call
+    def create_member_search(body)
       # Prepare query url.
       _query_builder = Configuration.get_base_uri
-      _query_builder << '/v1/airline/flights'
+      _query_builder << '/v1/airline/members/actions/search'
       _query_url = APIHelper.clean_url _query_builder
 
       # Prepare headers.
@@ -72,7 +71,7 @@ module GlobalMilesAirlineApi
 
       # Return appropriate response type.
       decoded = APIHelper.json_deserialize(_context.response.raw_body)
-      Response.from_hash(decoded)
+      MemberSearchResponse.from_hash(decoded)
     end
   end
 end

@@ -10,9 +10,9 @@ module GlobalMilesAirlineApi
     # @return [String]
     attr_accessor :ffp_number
 
-    # Type of the miles card.
-    # @return [CardTypeEnum]
-    attr_accessor :card_type
+    # Type of tiers.
+    # @return [TierTypeEnum]
+    attr_accessor :tier_type
 
     # If the provided information is not enough to create a ffp member, this
     # field can use to get new information. The possible values are language,
@@ -27,7 +27,7 @@ module GlobalMilesAirlineApi
     def self.names
       @_hash = {} if @_hash.nil?
       @_hash['ffp_number'] = 'ffp_number'
-      @_hash['card_type'] = 'card_type'
+      @_hash['tier_type'] = 'tier_type'
       @_hash['need_extra_info'] = 'need_extra_info'
       @_hash = super().merge(@_hash)
       @_hash
@@ -35,11 +35,11 @@ module GlobalMilesAirlineApi
 
     def initialize(status = nil,
                    ffp_number = nil,
-                   card_type = nil,
+                   tier_type = nil,
                    need_extra_info = nil,
                    message = nil)
       @ffp_number = ffp_number
-      @card_type = card_type
+      @tier_type = tier_type
       @need_extra_info = need_extra_info
 
       # Call the constructor of the base class
@@ -54,14 +54,14 @@ module GlobalMilesAirlineApi
       # Extract variables from the hash.
       status = hash['status']
       ffp_number = hash['ffp_number']
-      card_type = hash['card_type']
+      tier_type = hash['tier_type']
       need_extra_info = hash['need_extra_info']
       message = hash['message']
 
       # Create object from extracted values.
       NewMemberResponse.new(status,
                             ffp_number,
-                            card_type,
+                            tier_type,
                             need_extra_info,
                             message)
     end

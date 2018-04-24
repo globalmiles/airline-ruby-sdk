@@ -42,8 +42,8 @@ require_relative 'global_miles_airline_api/models/award_type_enum.rb'
 require_relative 'global_miles_airline_api/models/flight_status_type_enum.rb'
 require_relative 'global_miles_airline_api/models/extra_info_type_enum.rb'
 require_relative 'global_miles_airline_api/models/routing_type_enum.rb'
+require_relative 'global_miles_airline_api/models/tier_type_enum.rb'
 require_relative 'global_miles_airline_api/models/cabin_type_enum.rb'
-require_relative 'global_miles_airline_api/models/card_type_enum.rb'
 
 # Exceptions
 require_relative 'global_miles_airline_api/exceptions/api_exception.rb'
@@ -52,4 +52,5 @@ require_relative 'global_miles_airline_api/configuration.rb'
 
 # Controllers
 require_relative 'global_miles_airline_api/controllers/base_controller.rb'
+require_relative 'global_miles_airline_api/controllers/members_controller.rb'
 require_relative 'global_miles_airline_api/controllers/flights_controller.rb'

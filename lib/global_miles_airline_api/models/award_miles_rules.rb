@@ -5,11 +5,11 @@ module GlobalMilesAirlineApi
   # A complex object for definition of the award mile calculation logic.
   class AwardMilesRules < BaseModel
     # The type of the award base. The possible values are 'distance_based' and
-    # 'fair_based'.
+    # 'fare_based'.
     # @return [AwardTypeEnum]
     attr_accessor :award_type
 
-    # The ratio for calculating base mile from distance or fair. Possible value
+    # The ratio for calculating base mile from distance or fare. Possible value
     # is an integer between 1 and 100.
     # @return [Integer]
     attr_accessor :base_ratio
