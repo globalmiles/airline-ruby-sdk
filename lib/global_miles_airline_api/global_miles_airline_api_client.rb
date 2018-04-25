@@ -4,6 +4,12 @@
 module GlobalMilesAirlineApi
   #  global_miles_airline_api client class.
   class GlobalMilesAirlineApiClient
+    # Singleton access to members controller.
+    # @return [MembersController] Returns the controller instance.
+    def members
+      MembersController.instance
+    end
+
     # Singleton access to flights controller.
     # @return [FlightsController] Returns the controller instance.
     def flights

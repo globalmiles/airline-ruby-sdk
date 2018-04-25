@@ -6,9 +6,9 @@ require_relative 'response'
 module GlobalMilesAirlineApi
   # MemberSearchResponse Model.
   class MemberSearchResponse < Response
-    # Type of miles card.
-    # @return [CardTypeEnum]
-    attr_accessor :card_type
+    # Type of tiers.
+    # @return [TierTypeEnum]
+    attr_accessor :tier_type
 
     # Value of current miles.
     # @return [Integer]
@@ -21,19 +21,19 @@ module GlobalMilesAirlineApi
     # A mapping from model property names to API property names.
     def self.names
       @_hash = {} if @_hash.nil?
-      @_hash['card_type'] = 'card_type'
+      @_hash['tier_type'] = 'tier_type'
       @_hash['base_miles'] = 'base_miles'
       @_hash['promo_miles'] = 'promo_miles'
       @_hash = super().merge(@_hash)
       @_hash
     end
 
-    def initialize(card_type = nil,
+    def initialize(tier_type = nil,
                    base_miles = nil,
                    promo_miles = nil,
                    status = nil,
                    message = nil)
-      @card_type = card_type
+      @tier_type = tier_type
       @base_miles = base_miles
       @promo_miles = promo_miles
 
@@ -47,14 +47,14 @@ module GlobalMilesAirlineApi
       return nil unless hash
 
       # Extract variables from the hash.
-      card_type = hash['card_type']
+      tier_type = hash['tier_type']
       base_miles = hash['base_miles']
       promo_miles = hash['promo_miles']
       status = hash['status']
       message = hash['message']
 
       # Create object from extracted values.
-      MemberSearchResponse.new(card_type,
+      MemberSearchResponse.new(tier_type,
                                base_miles,
                                promo_miles,
                                status,

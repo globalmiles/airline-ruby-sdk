@@ -85,7 +85,72 @@ The added initlization code can be debugged by putting a breakpoint in the ``` I
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
+* [MembersController](#members_controller)
 * [FlightsController](#flights_controller)
+
+## <a name="members_controller"></a>![Class: ](https://apidocs.io/img/class.png ".MembersController") MembersController
+
+### Get singleton instance
+
+The singleton instance of the ``` MembersController ``` class can be accessed from the API Client.
+
+```ruby
+members_controller = client.members
+```
+
+### <a name="create_recommend_a_new_member"></a>![Method: ](https://apidocs.io/img/method.png ".MembersController.create_recommend_a_new_member") create_recommend_a_new_member
+
+> This endpoint allows to recommend a new member to airlines.
+
+
+```ruby
+def create_recommend_a_new_member(body); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | The body of the request. |
+
+
+#### Example Usage
+
+```ruby
+body = NewMemberRequest.new
+
+result = members_controller.create_recommend_a_new_member(body)
+
+```
+
+
+### <a name="create_member_search"></a>![Method: ](https://apidocs.io/img/method.png ".MembersController.create_member_search") create_member_search
+
+> This endpoint allows to search a member on the airline system.
+
+
+```ruby
+def create_member_search(body); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | The body of the request. |
+
+
+#### Example Usage
+
+```ruby
+body = MemberSearchRequest.new
+
+result = members_controller.create_member_search(body)
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
 
 ## <a name="flights_controller"></a>![Class: ](https://apidocs.io/img/class.png ".FlightsController") FlightsController
 
@@ -97,66 +162,28 @@ The singleton instance of the ``` FlightsController ``` class can be accessed fr
 flights_controller = client.flights
 ```
 
-### <a name="create_recommend_a_new_member"></a>![Method: ](https://apidocs.io/img/method.png ".FlightsController.create_recommend_a_new_member") create_recommend_a_new_member
-
-> This endpoint allows to recommend a new member to airlines.
-
-
-```ruby
-def create_recommend_a_new_member(accept,
-                                      content_type,
-                                      body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| accept |  ``` Required ```  ``` DefaultValue ```  | It advertises which content type is able to understand. |
-| content_type |  ``` Required ```  ``` DefaultValue ```  | It tells the client what the content type of the returned. |
-| body |  ``` Required ```  | The body of the request. |
-
-
-#### Example Usage
-
-```ruby
-accept = 'application/json'
-content_type = 'application/json'
-body = NewMemberRequest.new
-
-result = flights_controller.create_recommend_a_new_member(accept, content_type, body)
-
-```
-
-
 ### <a name="create_flight_status"></a>![Method: ](https://apidocs.io/img/method.png ".FlightsController.create_flight_status") create_flight_status
 
 > This endpoint allows to search the status of flight.
 
 
 ```ruby
-def create_flight_status(accept,
-                             content_type,
-                             body); end
+def create_flight_status(body); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| accept |  ``` Required ```  ``` DefaultValue ```  | It advertises which content type is able to understand. |
-| content_type |  ``` Required ```  ``` DefaultValue ```  | It tells the client what the content type of the returned. |
 | body |  ``` Required ```  | The body of the request. |
 
 
 #### Example Usage
 
 ```ruby
-accept = 'application/json'
-content_type = 'application/json'
 body = FlightStatusRequest.new
 
-result = flights_controller.create_flight_status(accept, content_type, body)
+result = flights_controller.create_flight_status(body)
 
 ```
 
@@ -167,60 +194,22 @@ result = flights_controller.create_flight_status(accept, content_type, body)
 
 
 ```ruby
-def create_flight_creation(accept,
-                               content_type,
-                               body); end
+def create_flight_creation(body); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| accept |  ``` Required ```  ``` DefaultValue ```  | It advertises which content type is able to understand. |
-| content_type |  ``` Required ```  ``` DefaultValue ```  | It tells the client what the content type of the returned. |
 | body |  ``` Required ```  | The body of the request. |
 
 
 #### Example Usage
 
 ```ruby
-accept = 'application/json'
-content_type = 'application/json'
 body = FlightCreateRequest.new
 
-result = flights_controller.create_flight_creation(accept, content_type, body)
-
-```
-
-
-### <a name="create_member_search"></a>![Method: ](https://apidocs.io/img/method.png ".FlightsController.create_member_search") create_member_search
-
-> This endpoint allows to search a member on the airline system.
-
-
-```ruby
-def create_member_search(accept,
-                             content_type,
-                             body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| accept |  ``` Required ```  ``` DefaultValue ```  | It advertises which content type is able to understand. |
-| content_type |  ``` Required ```  ``` DefaultValue ```  | It tells the client what the content type of the returned. |
-| body |  ``` Required ```  | The body of the request. |
-
-
-#### Example Usage
-
-```ruby
-accept = 'application/json'
-content_type = 'application/json'
-body = MemberSearchRequest.new
-
-result = flights_controller.create_member_search(accept, content_type, body)
+result = flights_controller.create_flight_creation(body)
 
 ```
 

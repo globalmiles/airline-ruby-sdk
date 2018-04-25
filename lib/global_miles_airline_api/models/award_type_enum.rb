@@ -3,14 +3,14 @@
 
 module GlobalMilesAirlineApi
   # The type of the award base. The possible values are 'distance_based' and
-  # 'fair_based'.
+  # 'fare_based'.
   class AwardTypeEnum
     AWARD_TYPE_ENUM = [
       # TODO: Write general description for DISTANCE_BASED
       DISTANCE_BASED = 'distance_based'.freeze,
 
-      # TODO: Write general description for FAIR_BASED
-      FAIR_BASED = 'fair_based'.freeze
+      # TODO: Write general description for FARE_BASED
+      FARE_BASED = 'fare_based'.freeze
     ].freeze
   end
 end
